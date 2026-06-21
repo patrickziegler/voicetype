@@ -1,0 +1,10 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Id": "org.kde.plasma.kvoicetype",
+    "Name": "KVoiceType",
+    "Description": "Global voice dictation",
+    "Icon": "audio-input-microphone"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0"
+}
