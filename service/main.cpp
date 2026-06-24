@@ -62,6 +62,38 @@ private:
             emitPropertyChanged("Status");
             emitPropertyChanged("Text");
         });
+
+        object_->registerMethod("SetVoiceActivation")
+        .onInterface("org.kde.VoiceType")
+        .withInputParamNames("enabled")
+        .implementedAs([this](bool enabled) {
+            std::cout << "SetVoiceActivation("
+            << std::boolalpha << enabled
+            << ")" << std::endl;
+
+            if (voiceActivation_ == enabled)
+                return;
+
+            voiceActivation_ = enabled;
+
+            emitPropertyChanged("VoiceActivation");
+        });
+
+        object_->registerMethod("SetLanguage")
+        .onInterface("org.kde.VoiceType")
+        .withInputParamNames("language")
+        .implementedAs([this](const std::string& language) {
+            std::cout << "SetLanguage("
+            << language
+            << ")" << std::endl;
+
+            if (language_ == language)
+                return;
+
+            language_ = language;
+
+            emitPropertyChanged("Language");
+        });
     }
 
     void registerProperties()

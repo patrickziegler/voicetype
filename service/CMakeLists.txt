@@ -1,3 +1,5 @@
+find_package(sdbus-c++ REQUIRED)
+
 add_executable(voicetype-service
     main.cpp
 )

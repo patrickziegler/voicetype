@@ -13,15 +13,23 @@
 
         <method name="StopRecording"/>
 
+        <method name="SetVoiceActivation">
+            <arg name="enabled" type="b" direction="in"/>
+        </method>
+
+        <method name="SetLanguage">
+            <arg name="language" type="s" direction="in"/>
+        </method>
+
         <property
             name="VoiceActivation"
             type="b"
-            access="readwrite"/>
+            access="read"/>
 
         <property
             name="Language"
             type="s"
-            access="readwrite"/>
+            access="read"/>
 
         <!--
         Status values:
